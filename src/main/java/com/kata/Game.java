@@ -1,50 +1,35 @@
 package com.kata;
 
-import java.time.LocalDate;
+import com.kata.Food.BasicFood;
+import com.kata.Food.Food;
 
 public class Game {
     private Tamagotchi myTamagotchi;
-    private int daysPassed;
-    private LocalDate initlDate;
+    private Rules rules;
+    private int activity;
+    private Food food;
     public Game(){
         this.myTamagotchi = new Tamagotchi();
-        this.daysPassed = 0;
-        this.initlDate = LocalDate.of(2023, 2, 1);
+        this.food = new BasicFood(2);
+        this.rules = new TimeRules();
+        if(rules instanceof TimeRules) this.activity = 1;
+        if(rules instanceof NormalRules) this.activity = 0;
     }
     public Tamagotchi getMyTamagotchi() {
         return myTamagotchi;
     }
-    public int getDaysPassed() {
-        return daysPassed;
+    public String feedingTamagotchi(){
+        return rules.Feeding(myTamagotchi, food);
     }
-    public void setDaysPassed(int daysPassed) {
-        this.daysPassed = daysPassed;
-    }
-    public void setMyTamagotchi(Tamagotchi myTamagotchi) {
-        this.myTamagotchi = myTamagotchi;
-    }
-    public LocalDate getInitlDate() {
-        return initlDate;
-    }
-    public void setInitlDate(LocalDate initlDate) {
-        this.initlDate = initlDate;
-    }
-    public void pastTime(){
-        int age = LocalDate.now().plusDays(1).getDayOfYear() - initlDate.getDayOfYear();
-
-        myTamagotchi.setAge(age);
-
-    }
-    public String checkEnergy()
-        {if(myTamagotchi.getEnergy()==0){ 
-            myTamagotchi.setIsAwake(false);
-            return "(-_-) zZZ";
-        }
-        if(myTamagotchi.getEnergy()<3) return "(-_-)";
-        if(myTamagotchi.getEnergy()>=3) return "(o_o)";
+    public String playingTamagotchi(){
         
-        return "x_x";
+        return rules.playing(myTamagotchi);
     }
+    public String goToSleepTamagotchi(){
+        return rules.Sleeping(myTamagotchi);
+    }
+
+/* para extender de una abstract class que implementa una interface? */
     
     
     

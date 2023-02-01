@@ -55,20 +55,21 @@ public class Tamagotchi {
     public void setAge(int age) {
         this.age += age;
     }
-    public void feedingMe(Food food){
+    public void eat(Food food){
         setHunger(hunger-food.getValue());
         setFullness(fullness+food.getValue());
         setEnergy(energy+1);
     }
-    public void playingWithMe(){
+    public void play(){
         setEnergy(energy-1);
         setHunger(hunger+1);
         setMood(mood+1);
     }
-    public void iAmSleeping(){
+    public void sleep(){
         setEnergy(energy+2);
+        setIsAwake(false);
     }
-    public void makingPop(){
+    public void makePop(){
         setFullness(fullness-2);
     }
 }

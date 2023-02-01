@@ -10,10 +10,25 @@ public class GameTest {
     public GameTest(){
         this.game = new Game();
     }
-    @Test
-    public void Tamagotchi_making_pop()
+     @Test
+    public void Tamagotchi_feed_tamagotchi()
     {
-        game.pastTime();
-        assertEquals(1, game.getMyTamagotchi().getAge());
+        game.feedingTamagotchi();
+        assertEquals(2, game.getMyTamagotchi().getHunger());
     }
+    @Test
+    public void Tamagotchi_play_tamagotchi()
+    {
+        
+
+        
+        assertEquals("(._.)", game.playingTamagotchi());
+    }
+    @Test
+    public void Tamagotchi_check_is_awake()
+    {
+        
+        
+        assertEquals("(-_-) zZZ", game.goToSleepTamagotchi());
+    } 
 }

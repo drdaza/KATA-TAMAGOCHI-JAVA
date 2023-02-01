@@ -22,7 +22,7 @@ public class TamagotchiTest {
     @Test
     public void Tamagotchi_eat_food()
     {
-        myTamagotchi.feedingMe(food);
+        myTamagotchi.eat(food);
 
         assertEquals(2, myTamagotchi.getHunger());
         assertEquals(6, myTamagotchi.getFullness());
@@ -31,7 +31,7 @@ public class TamagotchiTest {
     @Test
     public void Tamagotchi_play()
     {
-        myTamagotchi.playingWithMe();
+        myTamagotchi.play();
 
         assertEquals(5, myTamagotchi.getMood());
         assertEquals(5, myTamagotchi.getHunger());
@@ -40,14 +40,14 @@ public class TamagotchiTest {
     @Test
     public void Tamagotchi_sleep()
     {
-        myTamagotchi.iAmSleeping();
+        myTamagotchi.sleep();
 
         assertEquals(6, myTamagotchi.getEnergy());
     }
     @Test
     public void Tamagotchi_making_pop()
     {
-        myTamagotchi.makingPop();
+        myTamagotchi.makePop();
 
 
         assertEquals(2, myTamagotchi.getFullness());
