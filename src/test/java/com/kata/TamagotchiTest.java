@@ -20,13 +20,38 @@ public class TamagotchiTest {
     }
 
     @Test
-    public void shouldAnswerWithTrue()
+    public void Tamagotchi_eat_food()
     {
         myTamagotchi.feedingMe(food);
 
         assertEquals(2, myTamagotchi.getHunger());
         assertEquals(6, myTamagotchi.getFullness());
         assertEquals(5, myTamagotchi.getEnergy());
+    }
+    @Test
+    public void Tamagotchi_play()
+    {
+        myTamagotchi.playingWithMe();
+
+        assertEquals(5, myTamagotchi.getMood());
+        assertEquals(5, myTamagotchi.getHunger());
+        assertEquals(3, myTamagotchi.getEnergy());
+    }
+    @Test
+    public void Tamagotchi_sleep()
+    {
+        myTamagotchi.iAmSleeping();
+
+        assertEquals(6, myTamagotchi.getEnergy());
+    }
+    @Test
+    public void Tamagotchi_making_pop()
+    {
+        myTamagotchi.makingPop();
+
+
+        assertEquals(2, myTamagotchi.getFullness());
+        
     }
 
 }

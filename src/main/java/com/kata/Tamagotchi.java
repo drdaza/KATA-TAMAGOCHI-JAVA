@@ -4,6 +4,7 @@ import com.kata.Food.Food;
 
 public class Tamagotchi {
     
+    private int age;
     private int mood;
     private int hunger;
     private int energy;
@@ -15,6 +16,7 @@ public class Tamagotchi {
         this.hunger = 4;
         this.energy = 4;
         this.fullness = 4;
+        this.age = 0;
         this.isAwake = true;
     }
     public int getMood() {
@@ -46,6 +48,12 @@ public class Tamagotchi {
     }
     public void setIsAwake(Boolean isAwake) {
         this.isAwake = isAwake;
+    }
+    public int getAge() {
+        return age;
+    }
+    public void setAge(int age) {
+        this.age += age;
     }
     public void feedingMe(Food food){
         setHunger(hunger-food.getValue());
