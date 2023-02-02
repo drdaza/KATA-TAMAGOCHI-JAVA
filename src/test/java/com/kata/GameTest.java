@@ -31,4 +31,15 @@ public class GameTest {
         
         assertEquals("(-_-) zZZ", game.goToSleepTamagotchi());
     } 
+    @Test
+    public void Tamagotchi_check_past_time()
+    {
+        
+        game.executeRules();
+        assertEquals(2, game.getMyTamagotchi().getEnergy());
+        assertEquals(6, game.getMyTamagotchi().getHunger());
+        assertEquals(2, game.getMyTamagotchi().getFullness());
+        assertEquals(2, game.getMyTamagotchi().getMood());
+    } 
+
 }
